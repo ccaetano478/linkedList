@@ -6,13 +6,8 @@ public class main {
 
 	public static void main (String[] args) {
 		
-		Employee n = new Employee("Camila", "Escrava", 2015156);
-		NodeList lista = new NodeList();
-		lista.addH(n);
-		lista.createReport();
-		
-		/*
 		int stop = 0;
+		NodeList list = new NodeList();
 		do {
 			System.out.println("Digite para: \n"
 					+ "1 - Adicionar novo funcionário \n"
@@ -23,7 +18,6 @@ public class main {
 			
 			Scanner scan = new Scanner(System.in);
 			int option = scan.nextInt();
-			NodeList list = new NodeList();
 			
 			switch(option) {
 			case 1: 
@@ -35,11 +29,16 @@ public class main {
 				float salario = scan.nextFloat();
 				
 				Employee func = new Employee(nome, cargo, salario);
-				list.addE(func);
-				System.out.println("Funcionario adicionado");
+				list.addH(func);
+				System.out.println("Funcionario adicionado \n");
 				break;
 			case 2:
 				list.createReport();
+				break;
+			case 3:
+				System.out.println("informar matricula: /n");
+				int matricula = scan.nextInt();
+				list.searchEmployee(matricula);
 				break;
 			case 5:
 				stop = 5;
@@ -49,7 +48,6 @@ public class main {
 			
 		} while (stop != 5);
 	
-		 */
 	}
 
 }

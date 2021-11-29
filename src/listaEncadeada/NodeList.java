@@ -65,10 +65,42 @@ public class NodeList {
 	public void createReport() {
 		Node aux = head;
 		
-		while (aux != null) {
-			aux.getItem().toString();
-			aux = aux.getNext();
+		if (isEmpty()) {
+			System.out.println("\n Não existe funcionários cadastrados \n \n");
+			return;
+		}else {
+			
+			while (aux != null) {
+				Employee n = (Employee) aux.getItem();
+				System.out.println(n);
+				aux = aux.getNext();
+			}
 		}
+		
+	}
+	
+	public void searchEmployee(int matricula) {
+		Node aux =  head;
+		Employee n = (Employee) aux.getItem();
+		
+		if (isEmpty()) {
+			System.out.println("\n Não existe funcionários cadastrados \n \n");
+			return;
+		}
+		else {
+			while (aux != null) {
+				if (n.getMatricula() == matricula) {
+					System.out.println(n);
+					return;
+				}
+				else {
+					aux = aux.getNext();
+					n = (Employee)aux.getItem();
+				}
+			}
+		}
+		
+		
 	}
 	
 	private boolean isEmpty() { //esse metodo verifica se o primeiro elemento esta vazio, se estiver a lista esta vazia

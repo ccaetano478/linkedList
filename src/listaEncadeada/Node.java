@@ -6,7 +6,7 @@ public class Node {
 	
 	public Node (Object item) {
 		this.item = item;
-		next = null;
+		
 	}
 
 	public Node getNext() {
